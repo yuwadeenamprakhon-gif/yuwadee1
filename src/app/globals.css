@@ -1,32 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
 
-:root {
-  --bg-color: #0f172a;
-  --text-color: #f8fafc;
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --card-border: rgba(255, 255, 255, 0.1);
+/* ================================================================
+   THEME DESIGN TOKENS (7 THEMES)
+   ================================================================ */
+
+/* 1. DARK MODE (Midnight - Default) */
+:root, [data-theme="dark"] {
+  --bg-color: #0b0f19;
+  --bg-secondary: #111827;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+  --card-bg: rgba(17, 24, 39, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover: rgba(31, 41, 55, 0.8);
   --primary: #ec4899;
   --primary-hover: #db2777;
+  --primary-glow: rgba(236, 72, 153, 0.25);
   --secondary: #8b5cf6;
-  --glass-bg: rgba(15, 23, 42, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent: #f43f5e;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --header-bg: rgba(11, 15, 25, 0.85);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(255, 255, 255, 0.12);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.12) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
 }
 
+/* 2. LIGHT MODE (Clean & Crisp) */
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-color: #0f172a;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-hover: #f1f5f9;
+  --primary: #e11d48;
+  --primary-hover: #be123c;
+  --primary-glow: rgba(225, 29, 72, 0.2);
+  --secondary: #6366f1;
+  --accent: #f43f5e;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --input-bg: rgba(0, 0, 0, 0.04);
+  --input-border: rgba(0, 0, 0, 0.15);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+}
+
+/* 3. BLUE MODE (Ocean Tech) */
+[data-theme="blue"] {
+  --bg-color: #070d1e;
+  --bg-secondary: #0c1631;
+  --text-color: #f0f9ff;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(12, 22, 49, 0.8);
+  --card-border: rgba(56, 189, 248, 0.15);
+  --card-hover: rgba(20, 35, 75, 0.85);
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --primary-glow: rgba(14, 165, 233, 0.25);
+  --secondary: #3b82f6;
+  --accent: #38bdf8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(8, 16, 38, 0.8);
+  --glass-border: rgba(56, 189, 248, 0.12);
+  --header-bg: rgba(7, 13, 30, 0.9);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(56, 189, 248, 0.2);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
+}
+
+/* 4. GREEN MODE (Emerald Fresh) */
+[data-theme="green"] {
+  --bg-color: #041610;
+  --bg-secondary: #09261c;
+  --text-color: #ecfdf5;
+  --text-muted: #a7f3d0;
+  --card-bg: rgba(9, 38, 28, 0.8);
+  --card-border: rgba(52, 211, 153, 0.15);
+  --card-hover: rgba(16, 58, 43, 0.85);
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --primary-glow: rgba(16, 185, 129, 0.25);
+  --secondary: #14b8a6;
+  --accent: #34d399;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(5, 24, 18, 0.8);
+  --glass-border: rgba(52, 211, 153, 0.12);
+  --header-bg: rgba(4, 22, 16, 0.9);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(52, 211, 153, 0.2);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.15) 0px, transparent 50%);
+}
+
+/* 5. PURPLE MODE (Cyber Luxury) */
+[data-theme="purple"] {
+  --bg-color: #120924;
+  --bg-secondary: #1d1038;
+  --text-color: #faf5ff;
+  --text-muted: #d8b4fe;
+  --card-bg: rgba(29, 16, 56, 0.8);
+  --card-border: rgba(192, 132, 252, 0.15);
+  --card-hover: rgba(45, 24, 88, 0.85);
+  --primary: #a855f7;
+  --primary-hover: #9333ea;
+  --primary-glow: rgba(168, 85, 247, 0.3);
+  --secondary: #c084fc;
+  --accent: #e879f9;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(18, 9, 36, 0.8);
+  --glass-border: rgba(192, 132, 252, 0.12);
+  --header-bg: rgba(18, 9, 36, 0.9);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(192, 132, 252, 0.2);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.2) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(232, 121, 249, 0.15) 0px, transparent 50%);
+}
+
+/* 6. GRADIENT MODE (Vibrant Sunset) */
+[data-theme="gradient"] {
+  --bg-color: #0f0c1b;
+  --bg-secondary: #1c1432;
+  --text-color: #ffffff;
+  --text-muted: #cbd5e1;
+  --card-bg: rgba(28, 20, 50, 0.78);
+  --card-border: rgba(244, 63, 94, 0.2);
+  --card-hover: rgba(45, 30, 80, 0.85);
+  --primary: #f43f5e;
+  --primary-hover: #e11d48;
+  --primary-glow: rgba(244, 63, 94, 0.35);
+  --secondary: #fb923c;
+  --accent: #8b5cf6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --glass-bg: rgba(18, 14, 33, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(15, 12, 27, 0.92);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-border: rgba(244, 63, 94, 0.25);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.22) 0px, transparent 50%),
+                   radial-gradient(at 100% 0%, rgba(251, 146, 60, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.2) 0px, transparent 50%);
+}
+
+/* 7. CUSTOM MODE (Rose Gold Fashion) */
+[data-theme="custom"] {
+  --bg-color: #170e14;
+  --bg-secondary: #271621;
+  --text-color: #fff1f2;
+  --text-muted: #fda4af;
+  --card-bg: rgba(39, 22, 33, 0.8);
+  --card-border: rgba(251, 113, 133, 0.18);
+  --card-hover: rgba(58, 32, 49, 0.85);
+  --primary: #fb7185;
+  --primary-hover: #f43f5e;
+  --primary-glow: rgba(251, 113, 133, 0.3);
+  --secondary: #f472b6;
+  --accent: #fda4af;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --glass-bg: rgba(23, 14, 20, 0.85);
+  --glass-border: rgba(251, 113, 133, 0.15);
+  --header-bg: rgba(23, 14, 20, 0.92);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(251, 113, 133, 0.25);
+  --body-gradient: radial-gradient(at 0% 0%, rgba(251, 113, 133, 0.18) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, rgba(244, 114, 182, 0.15) 0px, transparent 50%);
+}
+
+/* ================================================================
+   GLOBAL RESET & BASE STYLES
+   ================================================================ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Outfit', sans-serif;
+html, body {
+  min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
-  min-height: 100vh;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+  font-family: 'Outfit', 'Noto Sans Thai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-image: var(--body-gradient);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 button {
@@ -34,34 +217,256 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  background: none;
 }
 
-/* Glassmorphism Utilities */
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Glassmorphism Classes */
 .glass {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
 }
 
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-primary {
+  background: var(--primary-glow);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.badge-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.65rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.65rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.65rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* Forms */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 0.6rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.modal-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Print Styling for POS Thermal Receipts */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .receipt-printable, .receipt-printable * {
+    visibility: visible;
+  }
+  .receipt-printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 10px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
 }
